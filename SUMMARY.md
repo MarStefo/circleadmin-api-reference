@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome to CircleAdmin!](README.md)
-* [Open staging environment](https://adminv3.admin.vm.marstefo.ovh)
+* [Open staging environment](https://adminv3.slobodiuk.vm.marstefo.ovh)
 
 ## Tables
 
