@@ -52,26 +52,26 @@ The task page of a server contains the recents tasks executed, but all the loggi
 
 {% page-ref page="alert.md" %}
 
-### Catalog
+## Catalog
 
 {% hint style="warning" %}
 _This feature is in development._
 {% endhint %}
 
-### Meeting
+## Meeting
 
 {% hint style="warning" %}
 _This feature is in development._
 {% endhint %}
 
-### Communication
+## Communication
 
 Communication allow an users to send a message to other users. A message can be "Administrative" and "Informative" with possibility to set as important \(only admins\).  
 Then, when the sender choses the recipients and the form is submitted, will be send by email, created an Alert and finally displayed on the homepage \(in the summary section\).
 
 ![Communication index page](../.gitbook/assets/screenshot-2020-10-05-at-23.48.18.png)
 
-### Extras
+## Extras
 
 CircleAdmin contais little services incapsulated in some parts of the web manager. Here you can read more:
 

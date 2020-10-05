@@ -49,21 +49,21 @@ description: Specifications for the User table
 | website | text |
 | is\_preferring\_url\_short | bool |
 
-## Field **`id` `(int)`**
+### Field **`id` `(int)`**
 
 The identifier of the user.
 
-## Field **`email` `(string)`**
+### Field **`email` `(string)`**
 
 The email of the user.
 
-## Field **`roles` `(json)`**
+### Field **`roles` `(json)`**
 
 The roles of the user. For more information read the Roles page.
 
 {% page-ref page="../extra/roles.md" %}
 
-## Field **`password` `(string)`**
+### Field **`password` `(string)`**
 
 The password of the user in a Symfony format \(using encoder _Symfony\Component\Security\Core\Encoder\MigratingPasswordEncoder_\), [read more](https://symfony.com/doc/current/security.html#c-encoding-passwords).
 
@@ -75,27 +75,27 @@ $argon2id$v=19$m=65536,t=4,p=1$U9abNvLaxePNJ5H88iKVRA$PIGx9ud4kydodQbaBMOqotCuOk
 To authenticate the user in project != Symfony, we suggest you to use POauth: [https://poauth.it](https://poauth.it)
 {% endhint %}
 
-## Field **`name` `(string)`**
+### Field **`name` `(string)`**
 
 The name of the user.
 
-## Field **`surname` `(string)`**
+### Field **`surname` `(string)`**
 
 The surname of the user.
 
-## Field `birthday` **`(date)`**
+### Field `birthday` **`(date)`**
 
 The birtday of the user in MySQL DATE format.
 
-## Field **`phone` `(string)`**
+### Field **`phone` `(string)`**
 
 The phone number of the user.
 
-## Field **`address` `(text)`**
+### Field **`address` `(text)`**
 
 The home address of the user.
 
-## Field **`image` `(string)`**
+### Field **`image` `(string)`**
 
 The local path of image profile.
 
@@ -104,11 +104,11 @@ The full path is:
 https://adminv3.slobodiuk.vm.marstefo.ovh/img/users/{local path of the image}
 {% endhint %}
 
-## Field **`is_deleted` `(bool)`**
+### Field **`is_deleted` `(bool)`**
 
 If the user is deleted, he cannot login \(and also in POauth\), but all his data is untoched.
 
-## Field **`credit` `(int)`**
+### Field **`credit` `(int)`**
 
 The calculated value of credit.
 
@@ -120,7 +120,7 @@ Never change this field directly in APIs. This value is calculated and can be ch
 All the monetary values are multiplied by 100. To restore the original value, simply divide by 100. 🧐
 {% endhint %}
 
-## Field **`wizard_status` `(int)`**
+### Field **`wizard_status` `(int)`**
 
 Service value to detect the step of the initial wizard. To disable set to -1.
 
@@ -134,11 +134,11 @@ Service value to detect the step of the initial wizard. To disable set to -1.
 | 5 | WIZARD\_CONCLUSION |
 | -1 | WIZARD\_END |
 
-## Field **`phone_verify` `(string)`**
+### Field **`phone_verify` `(string)`**
 
 The value of the sms verification code.
 
-## Field **`notification_type` `(int)`**
+### Field **`notification_type` `(int)`**
 
 This value is the preferred option of the communication type chosen by the user.
 
@@ -148,7 +148,7 @@ This value is the preferred option of the communication type chosen by the user.
 | 1 | NOTIFICATION\_INFO |
 | 2 | NOTIFICATION\_INFO\_ADMIN |
 
-## Field **`created_at` `(datetime)`**
+### Field **`created_at` `(datetime)`**
 
 The MySQL DATETIME of creation of the user.
 
@@ -156,11 +156,11 @@ The MySQL DATETIME of creation of the user.
 If it is NULL, the user is registered as "import from old management software"
 {% endhint %}
 
-## Field **`unsplash_query` `(string)`**
+### Field **`unsplash_query` `(string)`**
 
 The query used to search a unsplash photo.
 
-## Field **`unsplash_photo` `(DC2Type:object)`**
+### Field **`unsplash_photo` `(DC2Type:object)`**
 
 The rapresentation of a object that contains the photo cache. This value is resetted every night at 00.00.
 
@@ -168,11 +168,11 @@ The rapresentation of a object that contains the photo cache. This value is rese
  **DC2Type** is the proprietary format of Symfony PHP framework. Will be updated to classic format \(eg. JSON\) soon!
 {% endhint %}
 
-## Field **`unsplash_created_at` `(datetime)`**
+### Field **`unsplash_created_at` `(datetime)`**
 
 The time of creation of the cache unsplash. Used to detect when update the data.
 
-## Field **`nomination` `(string)`**
+### Field **`nomination` `(string)`**
 
 The user nomination. Values supported:
 
@@ -198,7 +198,7 @@ The user nomination. Values supported:
 Any string can be used and it will work. However, if the user changes his nomination, they will no longer be able to re-enter that string and will only see supported nominations.
 {% endhint %}
 
-## Field **`gender` `(string)`**
+### Field **`gender` `(string)`**
 
 The gender of the user.
 
@@ -211,7 +211,7 @@ The gender of the user.
 TODO: The values will be translated to English soon.
 {% endhint %}
 
-## Field **`quote_id` `(int)`**
+### Field **`quote_id` `(int)`**
 
 The id of Quote MarStefo quote.
 
@@ -219,23 +219,23 @@ The id of Quote MarStefo quote.
 To see the project in action: [https://quote.marstefo.ovh](https://quote.marstefo.ovh)
 {% endhint %}
 
-## Field **`is_welcome_enabled` `(bool)`**
+### Field **`is_welcome_enabled` `(bool)`**
 
 This option is related to what show in the web manager homepage.
 
-## Field **`is_login_logged_success` `(bool)`**
+### Field **`is_login_logged_success` `(bool)`**
 
 Whether or not to send a successful login mail notification.
 
-## Field **`is_login_logged_fail` `(bool)`**
+### Field **`is_login_logged_fail` `(bool)`**
 
 Whether or not to send a failed login mail notification.
 
-## Field **`is_disabled_cookies` `(bool)`**
+### Field **`is_disabled_cookies` `(bool)`**
 
 This preference is used to disable the cookie banner code in the web manager.
 
-## Field **`links` `(DC2Type:array)`**
+### Field **`links` `(DC2Type:array)`**
 
 The link to show in the footer of the web manager.
 
@@ -243,15 +243,15 @@ The link to show in the footer of the web manager.
  **DC2Type** is the proprietary format of Symfony PHP framework. Will be updated to classic format \(eg. JSON\) soon!
 {% endhint %}
 
-## Field **`telegram_code` `(string)`**
+### Field **`telegram_code` `(string)`**
 
 The telegram code verification.
 
-## Field **`telegram_code_created_at` `(datetime)`**
+### Field **`telegram_code_created_at` `(datetime)`**
 
 The datetime creation of telegram code verification.
 
-## Field **`telegram_data` `(DC2Type:array)`**
+### Field **`telegram_data` `(DC2Type:array)`**
 
 The cache data related to the account telegram.
 
@@ -259,7 +259,7 @@ The cache data related to the account telegram.
  **DC2Type** is the proprietary format of Symfony PHP framework. Will be updated to classic format \(eg. JSON\) soon!
 {% endhint %}
 
-## Field **`fast_lane_token` `(string)`**
+### Field **`fast_lane_token` `(string)`**
 
 The token of FastLane.
 
@@ -267,19 +267,19 @@ The token of FastLane.
 FastLane is a method of authentication that permit to skip the login process.
 {% endhint %}
 
-## Field **`fast_lane_token_created_at` `(datetime)`**
+### Field **`fast_lane_token_created_at` `(datetime)`**
 
 The date of creation of FastLane token.
 
-## Field **`reset_password_code` `(string)`**
+### Field **`reset_password_code` `(string)`**
 
 The reset password code used to reset the CircleAdmin password.
 
-## Field **`reset_password_created_at` `(datetime)`**
+### Field **`reset_password_created_at` `(datetime)`**
 
 The datetime of creation of the reset password code,
 
-## Field **`is_allowed_to_disable_servers` `(bool)`**
+### Field **`is_allowed_to_disable_servers` `(bool)`**
 
 Enable the possibility to block the servers if the user has payments not payed.
 
@@ -287,23 +287,23 @@ Enable the possibility to block the servers if the user has payments not payed.
 This value is not used because the Proxmox firewall does not work well.
 {% endhint %}
 
-## Field **`limit_refresh` `(int)`**
+### Field **`limit_refresh` `(int)`**
 
 The limit refresh is the number of tokens that can be used to sync immediately the servers status. This value is resetted every hour.
 
-## Field **`limit_refresh_created_at` `(datetime)`**
+### Field **`limit_refresh_created_at` `(datetime)`**
 
 The date of creation of the limit refresh.
 
-## Field **`competency` `(string)`**
+### Field **`competency` `(string)`**
 
 The competency of the user. Is also used in circleton.com .
 
-## Field **`website` `(string)`**
+### Field **`website` `(string)`**
 
 The personal website of the user. Is also used in circleton.com .
 
-## Field **`is_preferring_url_short` `(bool)`**
+### Field **`is_preferring_url_short` `(bool)`**
 
 Activate or deactivate the automatic link generation of Click MarStefo. Used in Project.
 
