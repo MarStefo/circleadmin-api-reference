@@ -4,9 +4,18 @@ description: CircleAdmin use the power of roles of Symfony.
 
 # Roles
 
-Symfony Roles
+## Symfony Roles
 
-All roles must start with "ROLE\_" and have a hierarchy. 
+All roles must start with "ROLE\_" and may have a hierarchy.   
+For instance, an user with administrative roles will contains this json:
+
+```text
+[
+	"ROLE_ADMIN",
+	"ROLE_USER",
+	"ROLE_SUPER_ADMIN"
+]
+```
 
 {% hint style="info" %}
 For more informations about Symfony roles read: [https://symfony.com/doc/current/security.html\#roles](https://symfony.com/doc/current/security.html#roles)
@@ -34,6 +43,10 @@ The Functional roles defines the access of an application.
 * '**ROLE\_MEETING**': "Access to the Meeting application", 
 * '**ROLE\_CATALOG**': "Access to the Catalog application", 
 * '**ROLE\_SERVER\_MANAGER**': "Access to the Server application".
+
+{% page-ref page="applications.md" %}
+
+
 
 ## Hierarchy
 

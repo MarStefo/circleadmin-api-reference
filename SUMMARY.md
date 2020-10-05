@@ -9,5 +9,10 @@
 
 ## Extra
 
+* [Applications](extra/applications.md)
 * [Roles](extra/roles.md)
+* [Alert](extra/alert.md)
+* [Credentials](extra/credentials.md)
+* [Telegram](extra/telegram.md)
+* [API](extra/api.md)
 
