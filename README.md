@@ -4,6 +4,16 @@ description: "Reference page for mapping the API specifications of the project i
 
 # Welcome to CircleAdmin!
 
+## 1.0.1 - 2020-10-06
+
+### Fixed
+
+### Changed
+
+* Tables -&gt; User, done TODOs
+
+### Added
+
 ## 1.0.0 - 2020-10-05
 
 ### Fixed

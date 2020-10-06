@@ -7,6 +7,10 @@
 
 * [User](tables/user.md)
 
+## API
+
+* [User](api/user.md)
+
 ## Extra
 
 * [Applications](extra/applications.md)

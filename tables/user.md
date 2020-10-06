@@ -11,7 +11,7 @@ description: Specifications for the User table
 | id | int |
 | email | string |
 | roles | json |
-| password | string |
+| ~~password~~ | ~~string~~ |
 | name | string |
 | surname | string |
 | birthday | date |
@@ -20,12 +20,12 @@ description: Specifications for the User table
 | image | string |
 | is\_deleted | bool |
 | credit | int |
-| wizard\_status | int |
+| ~~wizard\_status~~ | ~~int~~ |
 | phone\_verify | string |
 | notification\_type | int |
 | created\_at | datetime |
 | unsplash\_query | string |
-| unsplash\_photo | DC2Type:object |
+| unsplash\_photo | json |
 | unsplash\_created\_at | datetime |
 | nomination | string |
 | gender | string |
@@ -33,15 +33,15 @@ description: Specifications for the User table
 | is\_welcome\_enabled | bool |
 | is\_login\_logged\_success | bool |
 | is\_login\_logged\_fail | bool |
-| is\_disabled\_cookies | bool |
-| links | DC2Type:array |
+| ~~is\_disabled\_cookies~~ | ~~bool~~ |
+| links | json |
 | telegram\_code | string |
 | telegram\_code\_created\_at | datetime |
-| telegram\_data | DC2Type:array |
-| fast\_lane\_token | string |
-| fast\_lane\_token\_created\_at | datetime |
-| reset\_password\_code | string |
-| reset\_password\_created\_at | datetime |
+| telegram\_data | json |
+| ~~fast\_lane\_token~~ | ~~string~~ |
+| ~~fast\_lane\_token\_created\_at~~ | ~~datetime~~ |
+| ~~reset\_password\_code~~ | ~~string~~ |
+| ~~reset\_password\_created\_at~~ | ~~datetime~~ |
 | is\_allowed\_to\_disable\_servers | bool |
 | limit\_refresh | int |
 | limit\_refresh\_created\_at | datetime |
@@ -65,7 +65,12 @@ The roles of the user. For more information read the Roles page.
 
 ### Field **`password` `(string)`**
 
-The password of the user in a Symfony format \(using encoder _Symfony\Component\Security\Core\Encoder\MigratingPasswordEncoder_\), [read more](https://symfony.com/doc/current/security.html#c-encoding-passwords).
+{% hint style="danger" %}
+**This field is deprecated and must not be included!**
+{% endhint %}
+
+The password of the user in a Symfony format \(using encoder _Symfony\Component\Security\Core\Encoder\MigratingPasswordEncoder_\), [read more](https://symfony.com/doc/current/security.html#c-encoding-passwords).  
+Example with "password":
 
 ```text
 $argon2id$v=19$m=65536,t=4,p=1$U9abNvLaxePNJ5H88iKVRA$PIGx9ud4kydodQbaBMOqotCuOkj5rCqtHWrybwY4JsU
@@ -124,6 +129,10 @@ All monetary values are multiplied by 100. To restore the original value, simply
 
 ### Field **`wizard_status` `(int)`**
 
+{% hint style="danger" %}
+**This field is deprecated and must not be included!**
+{% endhint %}
+
 Service value to detect the step of the initial wizard. To disable set to -1.
 
 | value | comment |
@@ -162,12 +171,81 @@ If it is NULL, the user is registered as "_import from old management software_"
 
 The query used to search a unsplash photo.
 
-### Field **`unsplash_photo` `(DC2Type:object)`**
+### Field **`unsplash_photo` `(json)`**
 
-The rapresentation of a object that contains the photo cache. This value is resetted every night at 00.00.
+The rapresentation of a object that contains the photo cache. This value is resetted every night at 00.00.  
+Example of content:
 
-{% hint style="warning" %}
- **DC2Type** is the proprietary format of Symfony PHP framework. Will be updated to classic format \(eg. JSON\) soon!
+```text
+{
+	"id": "N4bE30MecGk",
+	"urls": {
+		"raw": "https://images.unsplash.com/photo-1533212026022-d1affe8cc6dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0NjQ1fQ",
+		"full": "https://images.unsplash.com/photo-1533212026022-d1affe8cc6dd?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjM0NjQ1fQ",
+		"small": "https://images.unsplash.com/photo-1533212026022-d1affe8cc6dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjM0NjQ1fQ",
+		"thumb": "https://images.unsplash.com/photo-1533212026022-d1affe8cc6dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjM0NjQ1fQ",
+		"regular": "https://images.unsplash.com/photo-1533212026022-d1affe8cc6dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjM0NjQ1fQ"
+	},
+	"user": {
+		"id": "CqFZXSlanxA",
+		"links": {
+			"html": "https://unsplash.com/@devano23",
+			"self": "https://api.unsplash.com/users/devano23",
+			"likes": "https://api.unsplash.com/users/devano23/likes",
+			"photos": "https://api.unsplash.com/users/devano23/photos",
+			"followers": "https://api.unsplash.com/users/devano23/followers",
+			"following": "https://api.unsplash.com/users/devano23/following",
+			"portfolio": "https://api.unsplash.com/users/devano23/portfolio"
+		},
+		"lastName": "Janse van Rensburg",
+		"linkHtml": "https://unsplash.com/@devano23",
+		"username": "devano23",
+		"firstName": "Devon",
+		"updatedAt": {
+			"offset": -14400,
+			"timezone": {
+				"name": "-04:00",
+				"location": false,
+				"transitions": false
+			},
+			"timestamp": 1601610271
+		}
+	},
+	"likes": 19,
+	"links": {
+		"html": "https://unsplash.com/photos/N4bE30MecGk",
+		"self": "https://api.unsplash.com/photos/N4bE30MecGk",
+		"download": "https://unsplash.com/photos/N4bE30MecGk/download",
+		"download_location": "https://api.unsplash.com/photos/N4bE30MecGk/download"
+	},
+	"width": 3456,
+	"height": 2304,
+	"urlImage": "https://images.unsplash.com/photo-1533212026022-d1affe8cc6dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjM0NjQ1fQ",
+	"createdAt": {
+		"offset": -14400,
+		"timezone": {
+			"name": "-04:00",
+			"location": false,
+			"transitions": false
+		},
+		"timestamp": 1533212106
+	},
+	"updatedAt": {
+		"offset": -14400,
+		"timezone": {
+			"name": "-04:00",
+			"location": false,
+			"transitions": false
+		},
+		"timestamp": 1601064689
+	},
+	"description": "Desk refresh",
+	"altDescription": "turned-on silver iMac beside Apple Magic Mouse"
+}
+```
+
+{% hint style="info" %}
+Based by [UnsplashPhoto](https://git.circleton.com/marstefo/admin-v3/-/blob/master/src/Model/UnsplashPhoto.php) class and [UnsplashUser](https://git.circleton.com/marstefo/admin-v3/-/blob/master/src/Model/UnsplashUser.php) class.
 {% endhint %}
 
 ### Field **`unsplash_created_at` `(datetime)`**
@@ -206,12 +284,8 @@ The gender of the user.
 
 | value | comment |
 | :--- | :--- |
-| "Maschio" | GENDER\_MALE |
-| "Femmina" | GENDER\_FEMALE |
-
-{% hint style="warning" %}
-TODO: The values will be translated to English soon.
-{% endhint %}
+| "male" | GENDER\_MALE |
+| "female" | GENDER\_FEMALE |
 
 ### Field **`quote_id` `(int)`**
 
@@ -235,14 +309,65 @@ Whether or not to send a failed login mail notification.
 
 ### Field **`is_disabled_cookies` `(bool)`**
 
+{% hint style="danger" %}
+**This field is deprecated and must not be included!**
+{% endhint %}
+
 This preference is used to disable the cookie banner code in the web manager.
 
-### Field **`links` `(DC2Type:array)`**
+### Field **`links` `(json)`**
 
-The link to show in the footer of the web manager.
+The links to show in the footer of the web manager.  
+Example of default content:
 
-{% hint style="warning" %}
- **DC2Type** is the proprietary format of Symfony PHP framework. Will be updated to classic format \(eg. JSON\) soon!
+```text
+[
+	{
+		"url": "https://admin.marstefo.ovh/profile",
+		"name": "Profilo",
+		"position": 1
+	},
+	{
+		"url": "https://admin.marstefo.ovh/profile/log",
+		"name": "Log accessi",
+		"position": 2
+	},
+	{
+		"url": "https://account.marstefo.ovh",
+		"name": "Account MarStefo",
+		"position": 3
+	},
+	{
+		"url": "https://click.marstefo.ovh",
+		"name": "Click MarStefo",
+		"position": 4
+	},
+	{
+		"url": "https://crowdesk.dev",
+		"name": "Crowdesk",
+		"position": 5
+	},
+	{
+		"url": "https://dataset.marstefo.ovh",
+		"name": "Dataset MarStefo",
+		"position": 6
+	},
+	{
+		"url": "https://bike.marstefo.ovh",
+		"name": "Bike MarStefo",
+		"position": 7
+	},
+	{
+		"url": "http://wemos.marstefo.ovh",
+		"name": "Wemos MarStefo",
+		"position": 8
+	}
+]
+```
+
+{% hint style="info" %}
+Want to see the Link object?[ See here](https://git.circleton.com/marstefo/admin-v3/-/blob/master/src/Model/Link.php).  
+_Based on the_ [_schema_](https://symfony.com/doc/current/_images/components/serializer/serializer_workflow.svg) _on Symfony website, the data was **normalized** then **denormalized** when used to show it._
 {% endhint %}
 
 ### Field **`telegram_code` `(string)`**
@@ -253,15 +378,24 @@ The telegram code verification.
 
 The datetime creation of telegram code verification.
 
-### Field **`telegram_data` `(DC2Type:array)`**
+### Field **`telegram_data` `(json)`**
 
 The cache data related to the account telegram.
 
-{% hint style="warning" %}
- **DC2Type** is the proprietary format of Symfony PHP framework. Will be updated to classic format \(eg. JSON\) soon!
-{% endhint %}
+```text
+{
+	"id": XXXXXXXX,
+	"lastName": "XXXXXX",
+	"username": "XXXX",
+	"firstName": "XXXX"
+}
+```
 
 ### Field **`fast_lane_token` `(string)`**
+
+{% hint style="danger" %}
+**This field is deprecated and must not be included!**
+{% endhint %}
 
 The token of FastLane.
 
@@ -271,13 +405,25 @@ FastLane is a method of authentication that permit to skip the login process.
 
 ### Field **`fast_lane_token_created_at` `(datetime)`**
 
+{% hint style="danger" %}
+**This field is deprecated and must not be included!**
+{% endhint %}
+
 The creation datetime of FastLane token.
 
 ### Field **`reset_password_code` `(string)`**
 
+{% hint style="danger" %}
+**This field is deprecated and must not be included!**
+{% endhint %}
+
 The reset password code used to reset the CircleAdmin password.
 
 ### Field **`reset_password_created_at` `(datetime)`**
+
+{% hint style="danger" %}
+**This field is deprecated and must not be included!**
+{% endhint %}
 
 The creation datetime of the reset password code,
 
