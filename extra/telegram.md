@@ -10,6 +10,10 @@ At the moment, the Telegram integration allow to sync the photo profile \(if the
 
 ## Command supported by the MarStefoAdminBot
 
+{% hint style="warning" %}
+The name of the bot can be changed \(and most likely it will\).
+{% endhint %}
+
 | command | comment |
 | :--- | :--- |
 | /start | Also used as test command to check if bot is alive |
