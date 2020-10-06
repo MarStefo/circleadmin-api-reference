@@ -101,7 +101,9 @@ The local path of image profile.
 
 {% hint style="info" %}
 The full path is:   
-https://adminv3.slobodiuk.vm.marstefo.ovh/img/users/{local path of the image}
+https://adminv3.slobodiuk.vm.marstefo.ovh/img/users/{local path of the image}  
+If `image` is null, the default one is:  
+[https://adminv3.slobodiuk.vm.marstefo.ovh/img/default.png](https://adminv3.slobodiuk.vm.marstefo.ovh/img/default.png)
 {% endhint %}
 
 ### Field **`is_deleted` `(bool)`**
@@ -117,7 +119,7 @@ Never change this field directly in APIs. This value is calculated and can be ch
 {% endhint %}
 
 {% hint style="info" %}
-All the monetary values are multiplied by 100. To restore the original value, simply divide by 100. 🧐
+All monetary values are multiplied by 100. To restore the original value, simply divide by 100. 🧐
 {% endhint %}
 
 ### Field **`wizard_status` `(int)`**
@@ -153,7 +155,7 @@ This value is the preferred option of the communication type chosen by the user.
 The MySQL DATETIME of creation of the user.
 
 {% hint style="info" %}
-If it is NULL, the user is registered as "import from old management software"
+If it is NULL, the user is registered as "_import from old management software_".
 {% endhint %}
 
 ### Field **`unsplash_query` `(string)`**
@@ -170,7 +172,7 @@ The rapresentation of a object that contains the photo cache. This value is rese
 
 ### Field **`unsplash_created_at` `(datetime)`**
 
-The time of creation of the cache unsplash. Used to detect when update the data.
+The creation datetime of the cache unsplash. Used to detect when update the data.
 
 ### Field **`nomination` `(string)`**
 
@@ -194,7 +196,7 @@ The user nomination. Values supported:
 "Sig."
 ```
 
-{% hint style="info" %}
+{% hint style="success" %}
 Any string can be used and it will work. However, if the user changes his nomination, they will no longer be able to re-enter that string and will only see supported nominations.
 {% endhint %}
 
@@ -269,7 +271,7 @@ FastLane is a method of authentication that permit to skip the login process.
 
 ### Field **`fast_lane_token_created_at` `(datetime)`**
 
-The date of creation of FastLane token.
+The creation datetime of FastLane token.
 
 ### Field **`reset_password_code` `(string)`**
 
@@ -277,7 +279,7 @@ The reset password code used to reset the CircleAdmin password.
 
 ### Field **`reset_password_created_at` `(datetime)`**
 
-The datetime of creation of the reset password code,
+The creation datetime of the reset password code,
 
 ### Field **`is_allowed_to_disable_servers` `(bool)`**
 
@@ -293,7 +295,7 @@ The limit refresh is the number of tokens that can be used to sync immediately t
 
 ### Field **`limit_refresh_created_at` `(datetime)`**
 
-The date of creation of the limit refresh.
+The creation datetime  of the limit refresh.
 
 ### Field **`competency` `(string)`**
 
