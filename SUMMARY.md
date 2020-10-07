@@ -3,9 +3,9 @@
 * [Welcome to CircleAdmin!](README.md)
 * [Open staging environment](https://adminv3.slobodiuk.vm.marstefo.ovh)
 
-## Tables
+## Entities
 
-* [User](tables/user.md)
+* [User](entities/user.md)
 
 ## API
 

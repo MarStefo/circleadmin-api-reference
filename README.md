@@ -4,6 +4,18 @@ description: "Reference page for mapping the API specifications of the project i
 
 # Welcome to CircleAdmin!
 
+## 1.0.2 - 2020-10-07
+
+### Fixed
+
+* Entities / User
+
+### Changed
+
+### Added
+
+* API / User \(GET all users, GET user ID, PUT user ID\)
+
 ## 1.0.1 - 2020-10-06
 
 ### Fixed
