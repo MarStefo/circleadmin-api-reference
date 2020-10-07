@@ -14,7 +14,7 @@ description: "Reference page for mapping the API specifications of the project i
 
 ### Added
 
-* API / User \(GET all users, GET user ID, PUT user ID\)
+* API / User \(full CRUD\)
 
 ## 1.0.1 - 2020-10-06
 
