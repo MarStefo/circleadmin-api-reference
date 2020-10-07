@@ -412,7 +412,86 @@ Enable or disable ClickMarStefo integration
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "id": 1,
+    "email": "xxx@gmail.com",
+    "roles": [
+        "ROLE_ADMIN",
+        "ROLE_SUPER_ADMIN",
+        "ROLE_USER"
+    ],
+    "name": "xxx",
+    "surname": "xxx",
+    "birthday": "1997-01-26T00:00:00+00:00",
+    "phone": "xxx",
+    "address": "xxx",
+    "image": "xxx.jpeg",
+    "is_deleted": false,
+    "credit": 4906.68,
+    "phone_verify": "57358",
+    "notificationType": 2,
+    "createdAt": "2020-09-23T21:00:00+00:00",
+    "unsplash_query": "imac",
+    "unsplash_photo": null,
+    "unsplash_createdAt": "2020-10-06T20:43:27+00:00",
+    "nomination": "Gentile",
+    "gender": "male",
+    "quoteId": 5,
+    "isWelcomeEnabled": true,
+    "isLoginLoggedSuccess": false,
+    "isLoginLoggedFail": false,
+    "links": [
+        {
+            "name": "Profilo",
+            "url": "https://admin.marstefo.ovh/profile",
+            "position": 1
+        },
+        {
+            "name": "Log accessi",
+            "url": "https://admin.marstefo.ovh/profile/log",
+            "position": 2
+        },
+        {
+            "name": "Account MarStefo",
+            "url": "https://account.marstefo.ovh",
+            "position": 3
+        },
+        {
+            "name": "Click MarStefo",
+            "url": "https://click.marstefo.ovh",
+            "position": 4
+        },
+        {
+            "name": "Crowdesk",
+            "url": "https://crowdesk.dev",
+            "position": 5
+        },
+        {
+            "name": "Dataset MarStefo",
+            "url": "https://dataset.marstefo.ovh",
+            "position": 6
+        },
+        {
+            "name": "Bike MarStefo",
+            "url": "https://bike.marstefo.ovh",
+            "position": 7
+        },
+        {
+            "name": "Wemos MarStefo",
+            "url": "http://wemos.marstefo.ovh",
+            "position": 8
+        }
+    ],
+    "telegramCode": "62935",
+    "telegramCodeCreatedAt": "2020-10-06T20:43:24+00:00",
+    "telegramData": null,
+    "isAllowedToDisableServers": false,
+    "limitRefresh": 10,
+    "limitRefreshCreatedAt": "2020-09-23T22:00:00+00:00",
+    "competency": "Web developer",
+    "website": "https://marstefo.ovh",
+    "isPreferringUrlShort": true
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
