@@ -10,7 +10,8 @@ Get Users
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+This endopoint allows you to get all the users \(enabled and disabled\).  
+**Role required**: ROLE\_USER
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -157,7 +158,8 @@ Get Users of the Team CircleTon
 {% api-method-description %}
 This endpoint allows you to get all the users related to the Team CircleTon.  
 Users of Team CircleTon are those with ROLE\_BASE \(or inherited\).  
-**Please note carefully what is responded, not all fields are given to know.**
+**Please note carefully what is responded, not all fields are given to know.  
+Role required:** ROLE\_BASE
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -201,7 +203,8 @@ Get User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to get the specified user ID.
+This endpoint allows you to get the specified user ID.  
+**Role** **required**: ROLE\_USER
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -312,7 +315,8 @@ Create User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to create an user.
+This endpoint allows you to create an user.  
+**Role required**: ROLE\_ADMIN
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -546,7 +550,8 @@ Edit user
 
 {% api-method-description %}
 This endpoint allows you to edit the specified user ID.   
-**Values are updated if provided.**
+**Values are updated if provided.  
+Role required:** ROLE\_ADMIN
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -783,7 +788,8 @@ Delete User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+This endpoint allows you to delete the specified user ID.  
+**Role required**: ROLE\_ADMIN
 {% endapi-method-description %}
 
 {% api-method-spec %}
